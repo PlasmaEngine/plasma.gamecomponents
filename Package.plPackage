@@ -1,0 +1,37 @@
+// plasma.gamecomponents — general gameplay components.
+//
+// The AUTHORED manifest, kept in source next to the plugin. Component hashes and sizes are NOT
+// here: the packaging step computes those and emits them into the published manifest.
+//
+// Field reference and validation rules: Docs/PluginPackageManagerPlan.html §05.
+
+PackageInfo
+{
+	string %Id{"plasma.gamecomponents"}
+	string %Version{"1.0.0"}
+	string %Publisher{"PlasmaTechnology"}
+	string %License{"MIT"}
+	string %Homepage{"https://plasmagameengine.com"}
+
+	string %MinEngineVersion{"0.7.0"}
+	string %MaxEngineVersion{"0.7.0"}
+	string %AbiTag{"win64-msvc19-0.7.0-dev"}
+
+	string %DisplayName{"Game Components"}
+	string %Category{"Gameplay"}
+	string %Description{"General gameplay components - spawners, triggers, timed behaviours and text meshes.
+
+FreeType ships with the package under the FreeType License; plTextMeshComponent uses it to read the glyph outlines it extrudes into a mesh."}
+	string %Icon{"Branding/GameComponentsIcon.png"}
+	string %Banner{"Branding/GameComponentsBanner.png"}
+
+	string %EditorPlugins{}
+	string %EditorEnginePlugins{}
+	string %RuntimePlugins{"plGameComponentsPlugin"}
+	string %PackageDependencies{"freetype.dll", "freetype-LICENSE.txt"}
+
+	Component { string %Name{"manifest"} string %Platform{"any"} }
+	Component { string %Name{"runtime-win64"} string %Platform{"win64"} }
+	Component { string %Name{"icon"} string %Platform{"any"} }
+	Component { string %Name{"banner"} string %Platform{"any"} }
+}

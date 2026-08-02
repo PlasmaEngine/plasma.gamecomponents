@@ -1,0 +1,21 @@
+// for a description of the options see:
+// Code/EditorPlugins/Assets/EditorPluginAssets/Assets.plPluginBundle
+
+PluginInfo
+{
+	string %DisplayName{"Game Components"}
+	string %Category{"Gameplay"}
+	string %MinEngineVersion{"0.7.0"}
+	string %MaxEngineVersion{"0.7.0"}
+	string %Icon{"GameComponentsIcon.png"}
+    string %Banner{"GameComponentsBanner.png"}
+	string %Description{"Contains components useful for many types of games."}
+	string %EditorPlugins{}
+	string %EditorEnginePlugins{}
+	string %RuntimePlugins{"plGameComponentsPlugin"}
+	string %PackageDependencies{"freetype.dll", "freetype-LICENSE.txt"}
+	string %RequiredPlugins{}
+	string %ExclusiveFeatures{}
+	string %EnabledInTemplates{"General3D"}
+	string %PlasmaBuildTargetName{"GameComponentsPlugin"}
+}
