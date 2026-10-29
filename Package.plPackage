@@ -8,20 +8,22 @@
 PackageInfo
 {
 	string %Id{"plasma.gamecomponents"}
-	string %Version{"1.1.1"}
+	string %Version{"2.0.1"}
 	string %Publisher{"PlasmaTechnology"}
 	string %License{"MIT"}
 	string %Homepage{"https://plasmagameengine.com"}
 
-	string %MinEngineVersion{"0.8.0"}
-	string %MaxEngineVersion{"0.8.0"}
-	string %AbiTag{"win64-msvc19-0.8.0-dev"}
+	string %MinEngineVersion{"0.11.2"}
+	string %MaxEngineVersion{"0.11.2"}
+	string %AbiTag{"win64-msvc19-0.11.2-abi6-dev"}
 
 	string %DisplayName{"Game Components"}
 	string %Category{"Gameplay"}
 	string %Description{"General gameplay components - spawners, triggers, timed behaviours and text meshes.
 
-FreeType ships with the package under the FreeType License; plTextMeshComponent uses it to read the glyph outlines it extrudes into a mesh."}
+FreeType ships with the package under the FreeType License; plTextMeshComponent uses it to read the glyph outlines it extrudes into a mesh.
+
+2.0: the third-person view, head bone and camera shake components moved to Gameplay Cameras (plasma.cameras), with their names and saved data unchanged. Projects using them need that package too; the editor offers to add it."}
 	string %Icon{"Branding/GameComponentsIcon.png"}
 	string %Banner{"Branding/GameComponentsBanner.png"}
 
@@ -29,6 +31,9 @@ FreeType ships with the package under the FreeType License; plTextMeshComponent 
 	string %EditorEnginePlugins{}
 	string %RuntimePlugins{"plGameComponentsPlugin"}
 	string %PackageDependencies{"freetype.dll", "freetype-LICENSE.txt"}
+
+	// The camera components that used to live here. Scenes saved with 1.x still reference them.
+	Requires { string %Id{"plasma.cameras"} string %Range{"^1.0"} }
 
 	// ---- assets ---------------------------------------------------------------
 	// Mounted as a data directory when the package is installed. The layout below Assets/

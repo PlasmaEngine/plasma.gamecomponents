@@ -183,6 +183,8 @@ void plClothSheetComponent::OnMsgExtractRenderData(plMsgExtractRenderData& msg) 
     bDontCacheYet = pMaterial.GetAcquireResult() == plResourceAcquireResult::LoadingFallback;
   }
 
+  // Acquiring the material above assigns its ID. Do not cache the default index from an unloaded material.
+  pRenderData->m_DataOffsets.m_uiMaterial = plPackMaterialDataOffset(m_hMaterial, 0);
   msg.AddRenderData(pRenderData, category, bDontCacheYet ? plRenderData::Caching::Never : plRenderData::Caching::IfStatic);
 }
 
