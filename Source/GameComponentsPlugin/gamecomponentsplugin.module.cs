@@ -19,5 +19,15 @@ public class GameComponentsPluginModule : ModuleRules
             PrivateLibraries.Add(Path.Combine(freetype, "win", "x64", "freetype.lib"));
             PlasmaPackageFreetype.StageRuntime(context);
         });
+        ConfigureForPlatform(TargetPlatform.Linux, () =>
+        {
+            // the system FreeType, as the engine's EditorUi links it
+            PublicSystemLibraries.Add("freetype");
+        });
+        ConfigureForPlatform(TargetPlatform.Mac, () =>
+        {
+            // the SDK's static FreeType for Apple silicon
+            PrivateLibraries.Add(Path.Combine(freetype, "mac", "arm64", "libfreetype.a"));
+        });
     }
 }
